@@ -22,7 +22,7 @@ class Conversation_RAG:
         embedding_model = HuggingFaceEmbeddings(model_name=self.embedding_model_repo_id)
         vectordb = FAISS.load_local("./db/faiss_index", embedding_model, allow_dangerous_deserialization=True)
 
-        login(token=self.hf_token)
+        #login(token=self.hf_token)
 
         device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
 
