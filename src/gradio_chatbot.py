@@ -39,7 +39,7 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
             vector_index_btn.click(upload_and_create_vector_store,[file,embedding_model],vector_index_msg_out)
             reset_inst_btn.click(reset_sys_instruction,instruction,instruction)
 
-        with gr.Column(scale=0.5, variant = 'panel'):
+        with gr.Column(scale=0.8, variant = 'panel'):
             gr.Markdown("## Select the Generation Model")
 
             with gr.Row(equal_height=True):
