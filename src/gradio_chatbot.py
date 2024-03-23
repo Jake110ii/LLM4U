@@ -11,17 +11,17 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
                 ''')
     with gr.Row():
 
-        with gr.Column(scale=0.5, variant = 'panel'):
+        with gr.Column(scale=0.2, variant = 'panel'):
             gr.Markdown("## Upload Document & Select the Embedding Model")
             file = gr.File(type="filepath")
             with gr.Row(equal_height=True):
                 
-                with gr.Column(scale=0.5, variant = 'panel'):
+                with gr.Row(scale=0.5, variant = 'panel'):
                     embedding_model = gr.Dropdown(choices= ["multilingual-e5-large", "all-roberta-large-v1_1024d", "all-mpnet-base-v2_768d"],
                                     value="multilingual-e5-large",
                                     label= "Select the embedding model")
 
-                with gr.Column(scale=0.5, variant='compact'):
+                with gr.Row(scale=0.5, variant='compact'):
                     vector_index_btn = gr.Button('Create vector store', variant='primary',scale=1)
                     vector_index_msg_out = gr.Textbox(show_label=False, lines=1,scale=1, placeholder="Creating vectore store ...")
 
@@ -32,9 +32,9 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
                 temperature = gr.Slider(label="temperature", minimum=0.1, maximum=1, value=0.1, step=0.05)
                 max_new_tokens = gr.Slider(label="max_new_tokens", minimum=1, maximum=2048, value=512, step=1)
                 repetition_penalty = gr.Slider(label="repetition_penalty", minimum=0, maximum=2, value=1.1, step=0.1)
-                top_k= gr.Slider(label="top_k", minimum=1, maximum=1000, value=10, step=1)
-                top_p=gr.Slider(label="top_p", minimum=0, maximum=1, value=0.95, step=0.05)
-                k_context=gr.Slider(label="k_context", minimum=1, maximum=15, value=5, step=1)
+                top_k= gr.Slider(label="top_k", minimum=1, maximum=1000, value=1, step=1)
+                top_p=gr.Slider(label="top_p", minimum=0, maximum=1, value=0, step=0.05)
+                k_context=gr.Slider(label="k_context", minimum=1, maximum=15, value=1, step=1)
 
             vector_index_btn.click(upload_and_create_vector_store,[file,embedding_model],vector_index_msg_out)
             reset_inst_btn.click(reset_sys_instruction,instruction,instruction)
