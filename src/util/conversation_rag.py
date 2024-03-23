@@ -20,7 +20,7 @@ class Conversation_RAG:
     def load_model_and_tokenizer(self):
 
         embedding_model = HuggingFaceEmbeddings(model_name=self.embedding_model_repo_id)
-        vectordb = FAISS.load_local("./db/faiss_index", embedding_model)
+        vectordb = FAISS.load_local("./db/faiss_index", embedding_model, allow_dangerous_deserialization=True)
 
         login(token=self.hf_token)
 
