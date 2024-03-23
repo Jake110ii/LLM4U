@@ -24,8 +24,9 @@ def create_vector_store_index(file_path, embedding_model_repo_id="sentence-trans
         pages = loader.load()
         
         text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size = 1024,
-        chunk_overlap = 128,)
+        chunk_size = 300, #1024
+        chunk_overlap = 50, #128
+        )
 
         documents = text_splitter.split_documents(pages)
 
