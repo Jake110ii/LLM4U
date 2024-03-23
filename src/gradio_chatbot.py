@@ -17,8 +17,8 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
             with gr.Row(equal_height=True):
                 
                 with gr.Column(scale=0.5, variant = 'panel'):
-                    embedding_model = gr.Dropdown(choices= ["all-roberta-large-v1_1024d", "all-mpnet-base-v2_768d"],
-                                    value="all-roberta-large-v1_1024d",
+                    embedding_model = gr.Dropdown(choices= ["multilingual-e5-large", "all-roberta-large-v1_1024d", "all-mpnet-base-v2_768d"],
+                                    value="multilingual-e5-large",
                                     label= "Select the embedding model")
 
                 with gr.Column(scale=0.5, variant='compact'):
@@ -45,7 +45,7 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
             with gr.Row(equal_height=True):
 
                 with gr.Column(scale=0.5):
-                    llm = gr.Dropdown(choices= ["Llamav2-7B-Chat", "Falcon-7B-Instruct"], value="Llamav2-7B-Chat", label="Select the LLM")
+                    llm = gr.Dropdown(choices= ["ELYZA-japanese-Llama-2-7b-instruct", "Llamav2-7B-Chat", "Falcon-7B-Instruct"], value="ELYZA-japanese-Llama-2-7b-instruct", label="Select the LLM")
                     hf_token = gr.Textbox(label='Enter your valid HF token_id', type = "password")
 
                 with gr.Column(scale=0.5):
