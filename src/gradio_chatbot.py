@@ -77,5 +77,5 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
 
 
 if __name__ == '__main__':
-    demo.queue(concurrency_limit=3)
+    demo.queue(concurrency_count=3)
     demo.launch(debug=True, share=True)
