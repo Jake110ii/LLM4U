@@ -34,6 +34,8 @@ def upload_and_create_vector_store(file,embedding_model):
         embedding_model_repo_id = "sentence-transformers/all-roberta-large-v1"
     elif embedding_model == "all-mpnet-base-v2_768d":
         embedding_model_repo_id = "sentence-transformers/all-mpnet-base-v2"
+    elif embedding_model == "multilingual-e5-large":
+        embedding_model_repo_id = "intfloat/multilingual-e5-large"
 
     index_success_msg = create_vector_store_index(permanent_file_path,embedding_model_repo_id)
     return index_success_msg
