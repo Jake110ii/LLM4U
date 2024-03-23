@@ -16,12 +16,12 @@ with gr.Blocks(gr.themes.Soft(primary_hue=gr.themes.colors.slate, secondary_hue=
             file = gr.File(type="filepath")
             with gr.Row(equal_height=True):
                 
-                with gr.Row(scale=0.5, variant = 'panel'):
+                with gr.Column(scale=0.5, variant = 'panel'):
                     embedding_model = gr.Dropdown(choices= ["multilingual-e5-large", "all-roberta-large-v1_1024d", "all-mpnet-base-v2_768d"],
                                     value="multilingual-e5-large",
                                     label= "Select the embedding model")
 
-                with gr.Row(scale=0.5, variant='compact'):
+                with gr.Column(scale=0.5, variant='compact'):
                     vector_index_btn = gr.Button('Create vector store', variant='primary',scale=1)
                     vector_index_msg_out = gr.Textbox(show_label=False, lines=1,scale=1, placeholder="Creating vectore store ...")
 
