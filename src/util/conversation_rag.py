@@ -37,7 +37,7 @@ class Conversation_RAG:
             self.llm_repo_id,
             trust_remote_code=True,
             quantization_config=bnb_config,
-            load_in_8bit=True,
+#            load_in_8bit=True,
             device_map='auto'
         )
         model.eval()
